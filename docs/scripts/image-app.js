@@ -5,7 +5,7 @@
   imageLoader.addEventListener('change', handleImage, false);
   var canvas = document.querySelector('#image');
   var ctx = canvas.getContext('2d');
-  var worker = new Worker('scripts/worker.js');
+  var worker = new Worker('https://cdn.rawgit.com/claudiordgz/web-workers-demo/master/docs/scripts/worker.js');
 
   function handleImage(e){
     var reader = new FileReader();
