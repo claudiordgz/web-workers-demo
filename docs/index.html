@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>Web Workers example</title>
+    <meta name=viewport content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
@@ -30,18 +31,16 @@
       p.header {
         font-size: 1.5em;
         text-align: center;
+        margin: 0;
       }
       img.udacity {
+        display: block;
         width: 10em;
-        margin-bottom: -15px;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
       }
-      .container {
-        display: flex;
-      }
-      .half {
-        width: 50%;
-        display: wrap;
-      }
+
       #pic {
         max-width: 300px;
         max-height: 300px;
@@ -59,26 +58,74 @@
       #image {
         width: 100%;
       }
+      .container {
+        height: 10em;
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+      .flexifly {
+        display: flex;
+        flex-direction: row;
+      }
+      @media screen and (max-width: 768px) {
+        .flexifly {
+          flex-direction: column;
+        }
+      }
+      button, .button {
+        display: inline-block;
+        padding: 6px 12px;
+        margin: 0 2px 5px 2px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+      }
+      .btn-default {
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+      }
+      .input {
+        margin: 10px 0;
+      }
     </style>
   </head>
   <body>
-    <p class="header">
-      <img class="udacity" src="https://res.cloudinary.com/www-claudiordgz-com/image/upload/c_scale,q_auto,w_200/v1475422187/udacity_share-46db4b8faf075a5af5a1070a7fa0ad3639783609ff45f447e4ea467fe3aa9d32_o8dclw.png" alt="Udacity Logo">
-      <a href="http://udacity.com/ud860" target="_blank">60FPS</a> quiz by <a href="http://twitter.com/cwpittman" target="_blank">Cameron Pittman</a>
-    </p>
-
     <div class="container">
+      <p class="header">
+        <img class="udacity" src="https://res.cloudinary.com/www-claudiordgz-com/image/upload/c_scale,q_auto,w_200/v1475422187/udacity_share-46db4b8faf075a5af5a1070a7fa0ad3639783609ff45f447e4ea467fe3aa9d32_o8dclw.png" alt="Udacity Logo">
+        <a href="http://udacity.com/ud860" target="_blank">60FPS</a> quiz by <a href="http://twitter.com/cwpittman" target="_blank">Cameron Pittman</a>
+      </p>
+    </div>
+    <div class="flexifly">
       <div class="half" id="time-animation">
         <h2>Jank Timer</h2>
       </div>
       <div class="half" id="image-manipulator">
         <h2>Image Manipulator</h2>
-        <input type="file" id="imageLoader" name="imageLoader"/>
-        <button id="invert">Invert</button>
-        <button id="chroma">Chroma</button>
-        <button id="greyscale">Greyscale</button>
-        <button id="vibrant">Vibrant</button>
-        <button id="revert">Revert to Original</button>
+        <div class="input">
+          <label for="imageLoader" class="button btn-default">Select Image</label>
+          <input id="imageLoader" name="imageLoader" style="visibility:hidden;" type="file">
+        </div>
+        <button class="btn-default" id="invert">Invert</button>
+        <button class="btn-default" id="chroma">Chroma</button>
+        <button class="btn-default" id="greyscale">Greyscale</button>
+        <button class="btn-default" id="vibrant">Vibrant</button>
+        <button class="btn-default" id="revert">Revert to Original</button>
         <canvas id="image"></canvas>
       </div>
     </div>
