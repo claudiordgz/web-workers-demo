@@ -134,10 +134,12 @@
     <script src="https://cdn.rawgit.com/claudiordgz/web-workers-demo/master/docs/scripts/time-animator.js" defer></script>
     <script src="https://cdn.rawgit.com/claudiordgz/web-workers-demo/master/docs/scripts/image-app.js" defer></script>
     <script>
-      WebFont.load({
-        google: {
-          families: ['Slabo 27px']
-        }
+      document.addEventListener("DOMContentLoaded", function() {
+        WebFont.load({
+          google: {
+            families: ['Slabo 27px']
+          }
+        });
       });
     </script>
   </body>
