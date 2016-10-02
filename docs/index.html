@@ -19,9 +19,47 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/claudiordgz/web-workers-demo/master/docs/css/styles.css">
-    <script src="https://cdn.rawgit.com/claudiordgz/web-workers-demo/master/docs/scripts/imageManips.js"></script>
+    <style>
+      body {
+        font-family: 'Slabo 27px', serif;
+        margin: 5px;
+      }
+      canvas {
+        margin-top: 5px;
+      }
+      p.header {
+        font-size: 1.5em;
+        text-align: center;
+      }
+      img.udacity {
+        width: 10em;
+        margin-bottom: -15px;
+      }
+      .container {
+        display: flex;
+      }
+      .half {
+        width: 50%;
+        display: wrap;
+      }
+      #pic {
+        max-width: 300px;
+        max-height: 300px;
+        width: 40vw;
+        height: 40vw;
+      }
+      .box {
+        display: inline-block;
+        border: solid 1px black;
+        margin: 10px;
+        height: 30px;
+        padding: 5px;
+        background-color: #DDD;
+      }
+      #image {
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <p class="header">
@@ -44,8 +82,16 @@
         <canvas id="image"></canvas>
       </div>
     </div>
-
-    <script src="https://cdn.rawgit.com/claudiordgz/web-workers-demo/master/docs/scripts/time-animator.js"></script>
-    <script src="https://cdn.rawgit.com/claudiordgz/web-workers-demo/master/docs/scripts/image-app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Slabo 27px']
+        }
+      });
+    </script>
+    <script src="https://cdn.rawgit.com/claudiordgz/web-workers-demo/master/docs/scripts/imageManips.js" async></script>
+    <script src="https://cdn.rawgit.com/claudiordgz/web-workers-demo/master/docs/scripts/time-animator.js" async></script>
+    <script src="https://cdn.rawgit.com/claudiordgz/web-workers-demo/master/docs/scripts/image-app.js" async></script>
   </body>
 </html>
